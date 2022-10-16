@@ -8,34 +8,37 @@ class Animal
     # method constructor - mengisi data awal
     # parameter: data hewan (array)
     public function __construct($animal)
-    {$animal = [
-        'Shark', 'Cow', 'Dolphin', 'tiger', 
-    ];
-    return $this->animals = $animal;
+    {
+        $animal = ['Monkey', 'Turtle', 'Dolphin', 'Cat', 'Sharks'];
+        return $this->animals = $animal;
     }
+
     # method index - menampilkan data animals
     public function index()
-    {foreach ($this->animals as $animal)
-        echo $animal . '<br>';
+    {
+        foreach ($this->animals as $animal)
+            echo $animal . '<br>';
     }
 
     # method store - menambahkan hewan baru
     # parameter: hewan baru
     public function store($animal)
-    {array_push($this->$animal);
+    {
+        array_push($this->animals, $animal);
     }
 
     # method update - mengupdate hewan
     # parameter: index dan hewan baru
-    public function update($index, $animal){
-        array_splice($this->animals, $index, $animal);
+    public function update($index, $animals)
+    {
+        array_splice($this->animals, $index);
     }
 
     # method delete - menghapus hewan
     # parameter: index
     public function destroy($index)
-    {unset($this->animals[$index]);
-        # gunakan method unset atau array_splice untuk menghapus data array
+    {
+        unset($this->animals[$index]);
     }
 }
 
